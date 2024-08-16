@@ -40,3 +40,10 @@
         <p>Capacitacion Equipos</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('capacitacionServicios.index') }}" class="nav-link {{ Request::is('capacitacionServicios*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Capacitacion Servicios</p>
+    </a>
+</li>

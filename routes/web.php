@@ -99,3 +99,4 @@ Route::group(['prefix' => ''], function () {
 
 
 Route::resource('capacitacionEquipos', App\Http\Controllers\CapacitacionEquipoController::class);
+Route::resource('capacitacionServicios', App\Http\Controllers\CapacitacionServicioController::class);
