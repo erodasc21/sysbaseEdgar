@@ -68,11 +68,9 @@ Route::group(['prefix' => 'admin','middleware' => ['role:Admin|Superadmin|Develo
     Route::resource('permissions', PermissionController::class);
 
 
-    Route::resource('capacitacionEstados', App\Http\Controllers\CapacitacionEstadosController::class);
-    Route::resource('capacitacionTipos', App\Http\Controllers\CapacitacionTipoController::class);
-    Route::resource('capacitacionClientes', App\Http\Controllers\CapacitacionClienteController::class);
 
 });
+
 
 
 
@@ -97,10 +95,5 @@ Route::group(['prefix' => ''], function () {
         ->name('cambio.idioma');
 
 
-
 });
 
-
-
-Route::resource('capacitacionModelos', App\Http\Controllers\CapacitacionModeloController::class);
-Route::resource('capacitacionMarcas', App\Http\Controllers\CapacitacionMarcaController::class);
