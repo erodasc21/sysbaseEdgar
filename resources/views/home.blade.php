@@ -14,13 +14,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Bienvenido {{auth()->user()->name}}</h1>
+                        <h1>Hola {{auth()->user()->name}}</h1>
                     </div>
                     <div class="col ">
                         <button class="btn btn-outline-primary float-right" :class="{'btn-outline-success' : editando}" @click="editando=!editando">
                             <i class="fa fa-edit" v-if="!editando"></i>
                             <i class="fa fa-save" v-if="editando"></i>
-                            <span class="d-none d-sm-inline" v-if="!editando">
+                            <span class="d-none d-smgit -inline" v-if="!editando">
                             {{__('Edit Shortcuts')}}
                         </span>
                             <span class="d-none d-sm-inline" v-if="editando">
