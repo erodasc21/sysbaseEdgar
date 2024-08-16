@@ -97,3 +97,5 @@ Route::group(['prefix' => ''], function () {
 
 });
 
+
+Route::resource('capacitacionEquipos', App\Http\Controllers\CapacitacionEquipoController::class);
