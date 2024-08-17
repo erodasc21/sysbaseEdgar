@@ -1,7 +1,7 @@
 <!-- Marca Id Field -->
 <div class="col-sm-12">
     {!! Form::label('marca_id', 'Marca Id:') !!}
-    <p>{{ $capacitacionModelo->marca_id }}</p>
+    <p>{{ $capacitacionModelo->marca->nombre }}</p>
 </div>
 
 <!-- Nombre Field -->

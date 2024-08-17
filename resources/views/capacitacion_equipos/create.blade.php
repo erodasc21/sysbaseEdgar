@@ -2,6 +2,8 @@
 
 @section('titulo_pagina', 'Crear Capacitacion Equipo')
 
+@include('layouts.plugins.select2')
+
 @section('content')
 
 
