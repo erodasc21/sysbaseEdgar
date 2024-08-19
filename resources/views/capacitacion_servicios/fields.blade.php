@@ -41,14 +41,9 @@
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('user_id', __('Username')) !!}
-    {!!
-        Form::text(
-            'user_id',
-            /*select(\App\Models\User::class, 'name'),*/
-            Auth::user()->name,
-            ['id'=>'user_id', 'class' => 'form-control', 'readonly' => 'readonly']
-        )
-    !!}
+    {!! Form::text('user_name', Auth::user()->name,
+    ['id'=>'user_name', 'class' => 'form-control', 'readonly' => 'readonly']) !!}
+    {!! Form::hidden('user_id', Auth::user()->id) !!}
 </div>
 
 <!-- Precio Field -->
