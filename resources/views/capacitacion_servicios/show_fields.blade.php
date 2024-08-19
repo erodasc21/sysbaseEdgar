@@ -1,25 +1,25 @@
 <!-- Cliente Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('cliente_id', 'Cliente Id:') !!}
-    <p>{{ $capacitacionServicio->cliente_id }}</p>
+    {!! Form::label('cliente_id', 'Cliente:') !!}
+    <p>{{ $capacitacionServicio->cliente->nombres .' '. $capacitacionServicio->cliente->apellidos }}</p>
 </div>
 
 <!-- Estado Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('estado_id', 'Estado Id:') !!}
-    <p>{{ $capacitacionServicio->estado_id }}</p>
+    {!! Form::label('estado_id', 'Estado:') !!}
+    <p>{{ $capacitacionServicio->estados->nombre }}</p>
 </div>
 
 <!-- Equipo Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('equipo_id', 'Equipo Id:') !!}
-    <p>{{ $capacitacionServicio->equipo_id }}</p>
+    {!! Form::label('equipo_id', 'Equipo:') !!}
+    <p>{{ $capacitacionServicio->equipo->numero_serie }}</p>
 </div>
 
 <!-- User Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <p>{{ $capacitacionServicio->user_id }}</p>
+    {!! Form::label('user_id', 'User:') !!}
+    <p>{{ $capacitacionServicio->user->name }}</p>
 </div>
 
 <!-- Precio Field -->
@@ -30,8 +30,8 @@
 
 <!-- Fecha Recepcion Field -->
 <div class="col-sm-12">
-    {!! Form::label('fecha_recepcion', 'Fecha Recepcion:') !!}
-    <p>{{ $capacitacionServicio->fecha_recepcion }}</p>
+    {!! Form::label('fecha_diagnostico', 'Fecha Diagnostico:') !!}
+    <p>{{ $capacitacionServicio->fecha_diagnostico->format('d-m-Y') }}</p>
 </div>
 
 <!-- Problema Field -->
@@ -43,7 +43,7 @@
 <!-- Fecha Diagnostico Field -->
 <div class="col-sm-12">
     {!! Form::label('fecha_diagnostico', 'Fecha Diagnostico:') !!}
-    <p>{{ $capacitacionServicio->fecha_diagnostico }}</p>
+    <p>{{ $capacitacionServicio->fecha_diagnostico->format('d-m-Y') }}</p>
 </div>
 
 <!-- Diagnostico Field -->
@@ -55,7 +55,7 @@
 <!-- Fecha Entrega Field -->
 <div class="col-sm-12">
     {!! Form::label('fecha_entrega', 'Fecha Entrega:') !!}
-    <p>{{ $capacitacionServicio->fecha_entrega }}</p>
+    <p>{{ $capacitacionServicio->fecha_entrega->format('d-m-Y')}}</p>
 </div>
 
 <!-- Solucion Field -->

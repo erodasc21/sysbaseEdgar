@@ -1,25 +1,54 @@
 <!-- Cliente Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('cliente_id', 'Cliente Id:') !!}
-    {!! Form::number('cliente_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('cliente_id', 'Cliente:') !!}
+    {!!
+    Form::select(
+        'cliente_id',
+        select(\App\Models\CapacitacionCliente::class, 'nombre_completo')
+        , null
+        , ['id'=>'estado_id','class' => 'form-control select2-multi','style'=>'width: 100%']
+    )
+    !!}
+
 </div>
 
 <!-- Estado Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('estado_id', 'Estado Id:') !!}
-    {!! Form::number('estado_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('estado_id', 'Estado:') !!}
+    {!!
+    Form::select(
+        'estado_id',
+        select(\App\Models\CapacitacionEstados::class)
+        , null
+        , ['id'=>'estado_id','class' => 'form-control select2-multi','style'=>'width: 100%']
+    )
+    !!}
 </div>
 
 <!-- Equipo Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('equipo_id', 'Equipo Id:') !!}
-    {!! Form::number('equipo_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('equipo_id', 'Equipo:') !!}
+    {!!
+    Form::select(
+        'equipo_id',
+        select(\App\Models\CapacitacionEquipo::class, 'texto')
+        , null
+        , ['id'=>'equipo_id','class' => 'form-control select2-multi','style'=>'width: 100%']
+    )
+    !!}
 </div>
 
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::number('user_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('user_id', __('Username')) !!}
+    {!!
+        Form::text(
+            'user_id',
+            /*select(\App\Models\User::class, 'name'),*/
+            Auth::user()->name,
+            ['id'=>'user_id', 'class' => 'form-control', 'readonly' => 'readonly']
+        )
+    !!}
 </div>
 
 <!-- Precio Field -->
@@ -31,7 +60,7 @@
 <!-- Fecha Recepcion Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha_recepcion', 'Fecha Recepcion:') !!}
-    {!! Form::text('fecha_recepcion', null, ['class' => 'form-control','id'=>'fecha_recepcion']) !!}
+    {!! Form::date('fecha_recepcion', null, ['class' => 'form-control','id'=>'fecha_recepcion']) !!}
 </div>
 
 @push('page_scripts')
@@ -49,7 +78,7 @@
 <!-- Fecha Diagnostico Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha_diagnostico', 'Fecha Diagnostico:') !!}
-    {!! Form::text('fecha_diagnostico', null, ['class' => 'form-control','id'=>'fecha_diagnostico']) !!}
+    {!! Form::date('fecha_diagnostico', null, ['class' => 'form-control','id'=>'fecha_diagnostico']) !!}
 </div>
 
 @push('page_scripts')
@@ -67,7 +96,7 @@
 <!-- Fecha Entrega Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha_entrega', 'Fecha Entrega:') !!}
-    {!! Form::text('fecha_entrega', null, ['class' => 'form-control','id'=>'fecha_entrega']) !!}
+    {!! Form::date('fecha_entrega', null, ['class' => 'form-control','id'=>'fecha_entrega']) !!}
 </div>
 
 @push('page_scripts')

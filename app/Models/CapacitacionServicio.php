@@ -30,11 +30,11 @@ class CapacitacionServicio extends Model
 
     protected $casts = [
         'precio' => 'decimal:2',
-        'fecha_recepcion' => 'date',
+        'fecha_recepcion' => 'date:d-m-Y',
         'problema' => 'string',
-        'fecha_diagnostico' => 'date',
+        'fecha_diagnostico' => 'date:d-m-Y',
         'diagnostico' => 'string',
-        'fecha_entrega' => 'date',
+        'fecha_entrega' => 'date:d-m-Y',
         'solucion' => 'string'
     ];
 
@@ -59,6 +59,13 @@ class CapacitacionServicio extends Model
 
     ];
 
+    public function showForm()
+    {
+        $user = Auth::user();
+        return view('resources/views/capacitacion_servicios/create.blade.php', ['username' => $user->name]);
+    }
+
+
     public function cliente(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(\App\Models\CapacitacionCliente::class, 'cliente_id');
@@ -69,9 +76,9 @@ class CapacitacionServicio extends Model
         return $this->belongsTo(\App\Models\CapacitacionEquipo::class, 'equipo_id');
     }
 
-    public function estado(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function estados(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\CapacitacionEstado::class, 'estado_id');
+        return $this->belongsTo(\App\Models\CapacitacionEstados::class, 'estado_id');
     }
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
