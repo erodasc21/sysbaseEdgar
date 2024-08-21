@@ -13,7 +13,12 @@
 <!-- Equipo Id Field -->
 <div class="col-sm-12">
     {!! Form::label('equipo_id', 'Equipo:') !!}
-    <p>{{ $capacitacionServicio->equipo->numero_serie }}</p>
+    <p>
+        {{'Marca: '. $capacitacionServicio->equipo->marca->nombre}}<br>
+        {{'Modelo: '. $capacitacionServicio->equipo->modelo->nombre}}<br>
+        {{'Numero Serie: '. $capacitacionServicio->equipo->numero_serie}}<br>
+        {{'Numero Imei: '. $capacitacionServicio->equipo->imei}}<br>
+    </p>
 </div>
 
 <!-- User Id Field -->
@@ -25,7 +30,7 @@
 <!-- Precio Field -->
 <div class="col-sm-12">
     {!! Form::label('precio', 'Precio:') !!}
-    <p>{{ $capacitacionServicio->precio }}</p>
+    <p>{{dvs(). $capacitacionServicio->precio }}</p>
 </div>
 
 <!-- Fecha Recepcion Field -->

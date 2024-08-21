@@ -28,6 +28,7 @@
 <!-- Equipo Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('equipo_id', 'Equipo:') !!}
+    <a href="{{route('capacitacionEquipos.create')}}" style="color:darkblue">Nuevo</a>
     {!!
     Form::select(
         'equipo_id',
@@ -49,7 +50,7 @@
 <!-- Precio Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('precio', 'Precio:') !!}
-    {!! Form::number('precio', null, ['class' => 'form-control']) !!}
+    {!! Form::number('precio', null, ['class' => 'form-control', 'placeholder' => 'Q. 0.00 ']) !!}
 </div>
 
 <!-- Fecha Recepcion Field -->

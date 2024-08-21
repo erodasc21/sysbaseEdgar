@@ -34,6 +34,14 @@ class CapacitacionServicioDataTable extends DataTable
                 return $capacitacionServicio->cliente->nombre_completo;
 
             })
+            ->editColumn('equipo_id',function (CapacitacionServicio $capacitacionServicio){
+
+                return $capacitacionServicio->equipo->texto;
+
+            })->editColumn('precio', function (CapacitacionServicio $capacitacionServicio) {
+                return $capacitacionServicio->precio_formateado;
+            })
+
             ->rawColumns(['action']);
     }
 
@@ -115,7 +123,7 @@ class CapacitacionServicioDataTable extends DataTable
         return [
             Column::make('cliente_id')->title('Cliente'),
             Column::make('estado_id')->data('estados.nombre')->title('Estado'),
-            Column::make('equipo_id')->data('equipo.numero_serie')->title('Equipo'),
+            Column::make('equipo_id')->title('Equipo'),
             Column::make('user_id')->data('user.name')->title('Usuario'),
             Column::make('precio'),
             Column::make('fecha_recepcion'),

@@ -85,4 +85,11 @@ class CapacitacionServicio extends Model
     {
         return $this->belongsTo(\App\Models\User::class, 'user_id');
     }
+
+    public function getPrecioFormateadoAttribute()
+    {
+        /*return $this->precio ? number_format($this->precio, 2, '.', ',') : null;*/
+        return $this->precio ? 'Q. ' .
+            number_format($this->precio, 2, '.', ','): null;
+    }
 }
