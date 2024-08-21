@@ -38,9 +38,9 @@ class CapacitacionServicioDataTable extends DataTable
 
                 return $capacitacionServicio->equipo->texto;
 
-            })/*->editColumn('precio', function (CapacitacionServicio $capacitacionServicio) {
+            })->editColumn('precio', function (CapacitacionServicio $capacitacionServicio) {
                 return $capacitacionServicio->precio_formateado;
-            })*/
+            })
 
             ->rawColumns(['action']);
     }
